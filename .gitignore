@@ -69,3 +69,5 @@ Testing/
 
 ProjectShoot/.vs
 ProjectShoot/ThirdParty
+ProjectShoot/x64/Debug
+ProjectShoot/x64/Release
