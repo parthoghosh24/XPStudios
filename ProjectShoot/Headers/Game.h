@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <Config.h>
+#include <iostream>
 
 /*
 * Game.h - This is the core class of the game which will handle various

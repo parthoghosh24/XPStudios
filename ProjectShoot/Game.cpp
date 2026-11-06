@@ -49,10 +49,18 @@ void Game::Render()
 {
 	mWindow.clear();
 
+	sf::Texture texture;
 	//TODO: We will display things here
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	mWindow.draw(shape);
+	//sf::CircleShape shape(100.f);
+	//shape.setFillColor(sf::Color::Green);
+
+	if (!texture.loadFromFile("Assets/Player/player.png"))
+	{
+		std::cerr << "File not found" << std::endl;
+	}
+
+	sf::Sprite sprite(texture);
+	mWindow.draw(sprite);
 	mWindow.display();
 
 }
