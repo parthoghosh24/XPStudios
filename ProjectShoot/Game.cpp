@@ -1,5 +1,5 @@
 #include <Game.h>
-
+#include <AssetManager.h>
 
 
 Game::Game() : mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Project shooter")
@@ -49,17 +49,8 @@ void Game::Render()
 {
 	mWindow.clear();
 
-	sf::Texture texture;
-	//TODO: We will display things here
-	//sf::CircleShape shape(100.f);
-	//shape.setFillColor(sf::Color::Green);
-
-	if (!texture.loadFromFile("Assets/Player/player.png"))
-	{
-		std::cerr << "File not found" << std::endl;
-	}
-
-	sf::Sprite sprite(texture);
+	//sf::Texture texture = ;
+	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png"));
 	mWindow.draw(sprite);
 	mWindow.display();
 
