@@ -47,9 +47,8 @@ void Game::Update(float deltaTime)
 
 void Game::Render()
 {
-	mWindow.clear();
-
-	//sf::Texture texture = ;
+	mWindow.clear(sf::Color::Black);
+	
 	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png"));
 	mWindow.draw(sprite);
 	mWindow.display();
