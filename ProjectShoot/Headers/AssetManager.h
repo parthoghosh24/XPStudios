@@ -27,6 +27,6 @@ public:
 		return instance;
 	}
 
-	sf::Texture& GetTexture(const std::string& textureName);
+	sf::Texture& GetTexture(const std::string& textureName, bool shoulRepeat);
 
 };

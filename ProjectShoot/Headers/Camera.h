@@ -2,5 +2,6 @@
 
 class Camera
 {
-
+public:
+	Camera();
 };

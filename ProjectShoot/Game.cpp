@@ -49,7 +49,10 @@ void Game::Render()
 {
 	mWindow.clear(sf::Color::Black);
 	
-	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png"));
+	sf::Sprite bgSprite(AssetManager::GetInstance().GetTexture("Assets/Background/bg.png", true));
+	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png", false));
+	bgSprite.setTextureRect({{0, 0}, {SCREEN_W, SCREEN_H}});
+	mWindow.draw(bgSprite);
 	mWindow.draw(sprite);
 	mWindow.display();
 

@@ -147,11 +147,13 @@
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Headers\Camera.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\AssetManager.h" />
+    <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\Config.h" />
     <ClInclude Include="Headers\Game.h" />
     <ClInclude Include="Headers\Utility.h" />
@@ -190,6 +192,7 @@
     <ClInclude Include="ThirdParty\SFML\include\SFML\Window\Mouse.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\Background\bg.png" />
     <Image Include="Assets\Player\player.png" />
   </ItemGroup>
   <ItemGroup>

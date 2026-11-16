@@ -27,6 +27,9 @@
     <ClCompile Include="Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Headers\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Game.h">
@@ -140,9 +143,15 @@
     <ClInclude Include="ThirdParty\SFML\include\SFML\Graphics\PrimitiveType.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Player\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Background\bg.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
