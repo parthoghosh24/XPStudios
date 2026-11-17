@@ -1,6 +1,6 @@
 #include "AssetManager.h"
 
-sf::Texture& AssetManager::GetTexture(const std::string& textureName)
+sf::Texture& AssetManager::GetTexture(const std::string& textureName, bool shouldRepeat)
 {
 	auto textureData = mTextures.find(textureName);
 
@@ -17,6 +17,8 @@ sf::Texture& AssetManager::GetTexture(const std::string& textureName)
 	{
 		ERR_LN("Failed to load texture");
 	}
+
+	texture.setRepeated(shouldRepeat);
 
 	return texture;
 }
