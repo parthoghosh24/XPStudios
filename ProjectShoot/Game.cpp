@@ -2,7 +2,9 @@
 #include <AssetManager.h>
 
 
-Game::Game() : mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Project shooter")
+Game::Game() : 
+	mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Project shooter"), 
+	mCamera({static_cast<float>(SCREEN_W), static_cast<float>(SCREEN_H)}, CAM_SCROLL_SPEED)
 {
 	// Default constructor
 }
@@ -42,18 +44,28 @@ void Game::HandleEvents()
 
 void Game::Update(float deltaTime)
 {
-	//TODO: We will perform Unity like updates here
+	mCamera.Update(deltaTime);
 }
 
 void Game::Render()
 {
 	mWindow.clear(sf::Color::Black);
-	
+	mCamera.ApplyToWorld(mWindow);
 	sf::Sprite bgSprite(AssetManager::GetInstance().GetTexture("Assets/Background/bg.png", true));
 	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png", false));
-	bgSprite.setTextureRect({{0, 0}, {SCREEN_W, SCREEN_H}});
+
+	sf::FloatRect cameraBoundaries= mCamera.GetCameraBoundaries();
+
+	int top = static_cast<int>(std::floor(cameraBoundaries.position.y)); // get the top
+
+	// Pinning background sprite to top
+	bgSprite.setPosition({cameraBoundaries.position.x, static_cast<float>(top)});
+
+	// and scroll the texture
+	bgSprite.setTextureRect({{0, top}, {SCREEN_W, SCREEN_H}});
 	mWindow.draw(bgSprite);
 	mWindow.draw(sprite);
+	Camera::ResetToDefault(mWindow);
 	mWindow.display();
 
 }
