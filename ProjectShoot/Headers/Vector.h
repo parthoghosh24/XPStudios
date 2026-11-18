@@ -15,14 +15,16 @@ struct Vector
 
 	Vector() = delete; // Default constructor not allowed for vector
 
-	Vector Add(Vector& other);
+	Vector Add(const Vector& other) const;
 
-	Vector Subtract(Vector& other);	
+	Vector Subtract(const Vector& other) const;	
 
 	
-	float Dot(Vector& other);
+	float Dot(const Vector& other) const;
 
 	void Scale(float scaleFactor);
+
+	void normalize();
 
 
 };
