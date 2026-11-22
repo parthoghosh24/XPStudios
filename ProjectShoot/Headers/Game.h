@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <Camera.h>
 #include <Config.h>
+#include <EnemySpawner.h>
 #include <iostream>
 
 /*
@@ -18,7 +19,7 @@ public:
 
 private:
 	sf::RenderWindow mWindow; // Window to be rendered	
-	Camera mCamera;
+	Camera mCamera;	
 
 	void HandleEvents();
 	void Update(float deltaTime); // Similar to Unity, we could handle the update logic in this

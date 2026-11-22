@@ -10,13 +10,6 @@
 */
 class AssetManager
 {
-private:
-	AssetManager() = default;
-
-	// This map is required to hold all the texture in memory till the asset manager is in memory.
-	// Once a texture has been loaded, that could stay in this map and we could access it without loading it again.
-	std::unordered_map<std::string, sf::Texture> mTextures;
-
 public:
 	AssetManager(const AssetManager&) = delete; // No copy constructor allowed
 	AssetManager& operator=(const AssetManager&) = delete; // No assignment operator allowed
@@ -28,5 +21,12 @@ public:
 	}
 
 	sf::Texture& GetTexture(const std::string& textureName, bool shoulRepeat);
+
+private:
+	AssetManager() = default;
+
+	// This map is required to hold all the texture in memory till the asset manager is in memory.
+	// Once a texture has been loaded, that could stay in this map and we could access it without loading it again.
+	std::unordered_map<std::string, sf::Texture> mTextures;
 
 };

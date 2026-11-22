@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include <Camera.h>
 
 Camera::Camera(sf::Vector2f cameraSize, float cameraScrollSpeed): 
 	mCameraView(cameraSize * 0.5f, cameraSize), mCameraScrollSpeed(cameraScrollSpeed) // halfing the size to set center of the camera
