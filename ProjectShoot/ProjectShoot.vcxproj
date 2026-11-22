@@ -148,10 +148,12 @@
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Run.cpp" />
+    <ClCompile Include="ScoreUI.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,7 @@ void Game::HandleEvents()
 void Game::Update(float deltaTime)
 {
 	mCamera.Update(deltaTime);
+	mScoreUI.SetScore(mScore);
 	EnemySpawner::GetInstance().Update(deltaTime, mCamera.GetCameraBoundaries(), Vector(50.0f, 50.0f));
 	
 }
@@ -68,6 +69,8 @@ void Game::Render()
 	EnemySpawner::GetInstance().Draw(mWindow);
 	
 	Camera::ResetToDefault(mWindow);
+	//Render score ui
+	mScoreUI.Draw(mWindow);
 	mWindow.display();
 
 }
