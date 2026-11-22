@@ -5,6 +5,7 @@
 #include <Config.h>
 #include <EnemySpawner.h>
 #include <iostream>
+#include <ScoreUI.h>
 
 /*
 * Game.h - This is the core class of the game which will handle various
@@ -20,6 +21,8 @@ public:
 private:
 	sf::RenderWindow mWindow; // Window to be rendered	
 	Camera mCamera;	
+	ScoreUI mScoreUI;
+	int mScore = 0;
 
 	void HandleEvents();
 	void Update(float deltaTime); // Similar to Unity, we could handle the update logic in this
