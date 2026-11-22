@@ -4,9 +4,9 @@
 
 Game::Game() : 
 	mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Project shooter"), 
-	mCamera({static_cast<float>(SCREEN_W), static_cast<float>(SCREEN_H)}, CAM_SCROLL_SPEED)
+	mCamera({static_cast<float>(SCREEN_W), static_cast<float>(SCREEN_H)}, CAM_SCROLL_SPEED)	
 {
-	// Default constructor
+	EnemySpawner::GetInstance().Initialize();
 }
 
 void Game::Run()
@@ -45,14 +45,15 @@ void Game::HandleEvents()
 void Game::Update(float deltaTime)
 {
 	mCamera.Update(deltaTime);
+	EnemySpawner::GetInstance().Update(deltaTime, mCamera.GetCameraBoundaries(), Vector(50.0f, 50.0f));
+	
 }
 
 void Game::Render()
 {
 	mWindow.clear(sf::Color::Black);
 	mCamera.ApplyToWorld(mWindow);
-	sf::Sprite bgSprite(AssetManager::GetInstance().GetTexture("Assets/Background/bg.png", true));
-	sf::Sprite sprite(AssetManager::GetInstance().GetTexture("Assets/Player/player.png", false));
+	sf::Sprite bgSprite(AssetManager::GetInstance().GetTexture("Assets/Background/bg.png", true));	
 
 	sf::FloatRect cameraBoundaries= mCamera.GetCameraBoundaries();
 
@@ -63,8 +64,9 @@ void Game::Render()
 
 	// and scroll the texture
 	bgSprite.setTextureRect({{0, top}, {SCREEN_W, SCREEN_H}});
-	mWindow.draw(bgSprite);
-	mWindow.draw(sprite);
+	mWindow.draw(bgSprite);	
+	EnemySpawner::GetInstance().Draw(mWindow);
+	
 	Camera::ResetToDefault(mWindow);
 	mWindow.display();
 
