@@ -34,8 +34,7 @@ void Game::Run()
 void Game::HandleEvents()
 {
 	while (const std::optional event = mWindow.pollEvent())
-	{
-		//TODO: some events like keyboard press and all
+	{		
 		if (event->is<sf::Event::Closed>())
 		{
 			// Close windows
