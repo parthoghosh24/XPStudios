@@ -5,6 +5,8 @@
 #include <Config.h>
 #include <EnemySpawner.h>
 #include <iostream>
+#include <InputManager.h>
+#include <MainMenu.h>
 #include <ScoreUI.h>
 
 /*
@@ -27,5 +29,15 @@ private:
 	void HandleEvents();
 	void Update(float deltaTime); // Similar to Unity, we could handle the update logic in this
 	void Render();
+
+	enum class State : uint8_t
+	{
+		MainMenu,
+		Game
+	};
+
+	State mCurrentState = State::MainMenu;
+	InputManager mInputManager;
+	MainMenu mMainMenu;
 
 };

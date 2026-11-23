@@ -151,6 +151,8 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="ScoreUI.cpp" />
@@ -162,9 +164,13 @@
     <ClInclude Include="Headers\Config.h" />
     <ClInclude Include="Headers\Enemy.h" />
     <ClInclude Include="Headers\EnemySpawner.h" />
+    <ClInclude Include="Headers\FontManager.h" />
     <ClInclude Include="Headers\Game.h" />
     <ClInclude Include="Headers\IHitable.h" />
+    <ClInclude Include="Headers\InputManager.h" />
+    <ClInclude Include="Headers\MainMenu.h" />
     <ClInclude Include="Headers\Player.h" />
+    <ClInclude Include="Headers\ScoreUI.h" />
     <ClInclude Include="Headers\Utility.h" />
     <ClInclude Include="Headers\Vector.h" />
     <ClInclude Include="Headers\Weapon.h" />
