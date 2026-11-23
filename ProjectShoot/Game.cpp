@@ -3,7 +3,7 @@
 
 
 Game::Game() : 
-	mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Space Aces"), 
+	mWindow(sf::VideoMode({ SCREEN_W, SCREEN_H }), "Space Aces", sf::Style::Titlebar | sf::Style::Close), 
 	mCamera({static_cast<float>(SCREEN_W), static_cast<float>(SCREEN_H)}, CAM_SCROLL_SPEED),
 	mCurrentState(State::MainMenu),
 	mMainMenu({ static_cast<float>(SCREEN_W), static_cast<float>(SCREEN_H) })
